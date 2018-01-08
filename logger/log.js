@@ -2,8 +2,8 @@ var winston = require('winston');
 var moment = require('moment');
 
 var fs = require( 'fs' );
-var logDir = '/home/centos/postService/logs'; // directory path you want to set
-var verLogDir = '/home/centos/postService/logs/verbose'; // directory path you want to set
+var logDir = '/home/centos/postservice/logs'; // directory path you want to set
+var verLogDir = '/home/centos/postservice/logs/verbose'; // directory path you want to set
 if ( !fs.existsSync( logDir ) ) {
     // Create the directory if it does not exist
     fs.mkdirSync( logDir );
