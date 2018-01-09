@@ -14,40 +14,6 @@ if ( !fs.existsSync( logDir ) ) {
 //     fs.mkdirSync( verLogDir );
 // }
 
-// verbose method
-// var verboseLogFile = new(require('winston-daily-rotate-file'))({
-//     name: 'verboseLogFile',
-//     filename: verLogDir + '/-verbose.log',
-//     datePattern: 'dd-MM-yyyy',
-//     prepend: true,
-//     json: false,
-//     timestamp: function() {
-//         return moment().format('D/MM/YYYY HH:mm:ss:SSS');
-//     }
-// })
-
-// verbose log
-// var verbose = new(winston.Logger)({
-//     transports: [
-//     new(winston.transports.Console)({
-//             timestamp: function() {
-//                 return moment().format('D/MM/YYYY HH:mm:ss:SSS');
-//             },
-//             colorize: true
-//         }),
-//         new(require('winston-daily-rotate-file'))({
-//             name: 'verbose',
-//             filename: logDir + '/-verbose.log',
-//             datePattern: 'dd-MM-yyyy',
-//             prepend: true,
-//             json: false,
-//             timestamp: function() {
-//                 return moment().format('D/MM/YYYY HH:mm:ss:SSS');
-//             }
-//         })
-//     ]
-// });
-
 // error-date.log
 var error = new(winston.Logger)({
     transports: [
@@ -63,106 +29,6 @@ var error = new(winston.Logger)({
             },
             level: 'error'
         })
-    ]
-});
-
-// equinoxe-medusa-date.log
-var equinoxe_medusa = new(winston.Logger)({
-    transports: [
-    new(winston.transports.Console)({
-            timestamp: function() {
-                return moment().format('D/MM/YYYY HH:mm:ss:SSS');
-            },
-            colorize: true,
-            handleExceptions: true
-        }),
-        new(require('winston-daily-rotate-file'))({
-            name: 'equinoxe-medusa',
-            filename: logDir + '/-equinoxe-medusa.log',
-            datePattern: 'dd-MM-yyyy',
-            prepend: true,
-            json: false,
-            handleExceptions: true,
-            timestamp: function() {
-                return moment().format('D/MM/YYYY HH:mm:ss:SSS');
-            }
-        }),
-        error
-    ]
-});
-
-//medusa-equinoxe-date.log
-var medusa_equinoxe = new(winston.Logger)({
-    transports: [
-    new(winston.transports.Console)({
-            timestamp: function() {
-                return moment().format('D/MM/YYYY HH:mm:ss:SSS');
-            },
-            colorize: true,
-            handleExceptions: true
-        }),
-        new(require('winston-daily-rotate-file'))({
-            name: 'medusa-equinoxe',
-            filename: logDir + '/-medusa-equinoxe.log',
-            datePattern: 'dd-MM-yyyy',
-            prepend: true,
-            json: false,
-            handleExceptions: true,
-            timestamp: function() {
-                return moment().format('D/MM/YYYY HH:mm:ss:SSS');
-            }
-        }),
-        error
-    ]
-});
-
-//hydra-medusa-date.log
-var hydra_medusa = new(winston.Logger)({
-    transports: [
-    new(winston.transports.Console)({
-            timestamp: function() {
-                return moment().format('D/MM/YYYY HH:mm:ss:SSS');
-            },
-            colorize: true,
-            handleExceptions: true
-        }),
-        new(require('winston-daily-rotate-file'))({
-            name: 'hydra-medusa',
-            filename: logDir + '/-hydra-medusa.log',
-            datePattern: 'dd-MM-yyyy',
-            prepend: true,
-            json: false,
-            handleExceptions: true,
-            timestamp: function() {
-                return moment().format('D/MM/YYYY HH:mm:ss:SSS');
-            }
-        }),
-        error
-    ]
-});
-
-//hydra_medusa_out_of_scope-date.log
-var hydra_medusa_out_of_scope = new(winston.Logger)({
-    transports: [
-    new(winston.transports.Console)({
-            timestamp: function() {
-                return moment().format('D/MM/YYYY HH:mm:ss:SSS');
-            },
-            colorize: true,
-            handleExceptions: true
-        }),
-        new(require('winston-daily-rotate-file'))({
-            name: 'hydra_medusa_out_of_scope',
-            filename: logDir + '/-hydra_medusa_out_of_scope.log',
-            datePattern: 'dd-MM-yyyy',
-            prepend: true,
-            json: false,
-            handleExceptions: true,
-            timestamp: function() {
-                return moment().format('D/MM/YYYY HH:mm:ss:SSS');
-            }
-        }),
-        error
     ]
 });
 
@@ -192,10 +58,4 @@ var system = new(winston.Logger)({
 });
 
 //exports.verbose = verbose;
-exports.medusa_equinoxe = medusa_equinoxe;
-exports.equinoxe_medusa = equinoxe_medusa;
-exports.hydra_medusa = hydra_medusa;
 exports.system = system;
-
-
-

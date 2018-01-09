@@ -19,8 +19,8 @@ app.use(cookieParser());
 // BodyParser Middleware
 app.use(bodyParser.json());
 
-app.use('/postservice', index);
-app.use('/postservice', POSTreciever);
+app.use('/', index);
+app.use('/', POSTreciever);
 
 // Set Port
 app.set('port', (process.env.PORT || 8080));

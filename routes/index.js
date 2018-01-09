@@ -8,7 +8,7 @@ router.get('/homepage', function(req, res) {
   res.json({
     success: 'ok',
     request: 'GET /homepage',
-    msg: 'Main page of Discovery Medusa API',
+    msg: 'Main page of POST Service API',
     response: ''
   });
 });
