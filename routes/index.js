@@ -13,4 +13,10 @@ router.get('/homepage', function(req, res) {
   });
 });
 
+router.get('/testing', function(req, res) {
+  res.json({
+    success: 'ok'
+  });
+});
+
 module.exports = router;
