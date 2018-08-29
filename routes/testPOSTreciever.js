@@ -4,7 +4,7 @@ var log = require('../logger/log.js');
 
 // Get Homepage /mas/
 router.post('/POSTreciever', function(req, res) {
-	log.system.info('Recieved body ', req.body)
+	console.log('Recieved body ', req.body)
 
 	console.log('Request body -> ', req.body)
 	res.sendStatus(204);
