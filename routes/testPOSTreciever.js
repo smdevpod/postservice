@@ -7,7 +7,7 @@ router.post('/POSTreciever', function(req, res) {
 	log.system.info('Recieved body ', req.body)
 
 	console.log('Request body -> ', req.body)
-	res.sendStatus(200);
+	res.sendStatus(204);
 });
 
 module.exports = router;
